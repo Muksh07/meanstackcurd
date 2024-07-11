@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const path = require('path');
 const cors = require('cors');
 const { ConnectMongoDB } = require('./Connection/connection');
 const userRouter = require('./Routes/user.routes');
@@ -17,8 +16,10 @@ const port = process.env.PORT || 3000;
 // Middleware
 app.use(bodyParser.json());
 app.use(cors());
+
 // Routes
 app.use('/api/users', userRouter);
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
