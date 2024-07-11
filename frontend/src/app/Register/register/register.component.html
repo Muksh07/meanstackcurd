@@ -1,3 +1,33 @@
-<p>
-  register works!
-</p>
+<div class="row">
+  <div class="col-4 m-auto">
+    <div class="card m-auto">
+      <div class="card-header">
+        Register
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm">
+          <div class="form-group">
+            <label for="name" class="form-label"><span class="required">*</span> Name</label>
+            <input type="text" class="form-control" required [(ngModel)]="name" name="name">
+          </div>
+          <div class="form-group">
+            <label for="email" class="form-label"><span class="required">*</span> Email</label>
+            <input type="email" class="form-control" required [(ngModel)]="email" name="email">
+          </div>
+          <div class="form-group">
+            <label for="password" class="form-label"><span class="required">*</span> Password</label>
+            <input type="password" class="form-control" required [(ngModel)]="password" name="password">
+          </div>
+          <div class="form-group">
+            <label for="gender" class="form-label"><span class="required">*</span> Gender</label>
+            <input type="text" class="form-control" required [(ngModel)]="gender" name="gender">
+          </div>
+          <div class="form-group">
+            <button type="submit" [disabled]="!registerForm.form.valid" class="btn btn-primary btn-primary-custom">Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
